@@ -5,10 +5,12 @@
 <body>
   <h1>jQuery Relative Date Plugin</h1>
   <div>
-    <input type="text" name="date" id="date" />
+    <input type="text" name="date" id="date" class="demoField" />
+    <p id="dateValue"></p>
   </div>
   <div>
-    <input type="text" name="dateWithValue" id="dateWithValue" value="now-1w" />
+    <input type="text" name="withDefault" id="withDefault" value="now-7d" class="demoField" />
+    <p id="withDefaultValue"></p>
   </div>
 
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -16,8 +18,14 @@
   <script type="text/javascript" src="./relative-date.js"></script>
   <script type="text/javascript">
     $(document).ready(function () {
+      $('.demoField').on('change', function (e) {
+        console.log('change');
+        const newVal = $(this).val();
+        $(this).siblings('p').html(newVal);
+      });
+
       $('#date').relativeDate();
-      $('#dateWithValue').relativeDate();
+      $('#withDefault').relativeDate();
     });
   </script>
 </body>
