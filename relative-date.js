@@ -54,6 +54,7 @@
       self.numberField.setAttribute("type", "number");
       self.numberField.setAttribute("min", 0);
       self.$numberField = $(self.numberField);
+      $(self.numberField).css("width", 50);
       self.$numberField.val(parsedValue.number);
 
       var opts = [];
