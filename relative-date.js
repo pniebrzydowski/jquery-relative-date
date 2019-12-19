@@ -68,7 +68,7 @@
       self.$unitField = $(self.unitField).html(opts);
       self.$unitField.val(parsedValue.unit);
 
-      self.$element.after(self.$numberField, self.$unitField);
+      self.$element.after(self.$numberField, self.$unitField).change();
 
       self._addEventListeners();
       return self;
