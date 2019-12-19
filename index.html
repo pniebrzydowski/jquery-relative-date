@@ -1,0 +1,25 @@
+<html>
+
+<head></head>
+
+<body>
+  <h1>jQuery Relative Date Plugin</h1>
+  <div>
+    <input type="text" name="date" id="date" />
+  </div>
+  <div>
+    <input type="text" name="dateWithValue" id="dateWithValue" value="now-1w" />
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./relative-date.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('#date').relativeDate();
+      $('#dateWithValue').relativeDate();
+    });
+  </script>
+</body>
+
+</html>
