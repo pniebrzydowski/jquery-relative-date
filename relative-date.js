@@ -1,5 +1,5 @@
 (function($, window, document, undefined) {
-  var pluginName = "relativeDate";
+  const pluginName = "relativeDate";
 
   parseValue = function(textValue) {
     if (!textValue) {
@@ -30,8 +30,14 @@
     this.unitOptions = options.unitOptions;
 
     this._updateValue = function() {
-      var number = self.$numberField.val();
+      let number = self.$numberField.val();
       var unit = self.$unitField.val();
+
+      if (number < 0) {
+        number = Math.abs(number);
+        self.$numberField.val(number);
+      }
+
       var newValue = getValueFromParts(number, unit);
       self.$element.val(newValue).change();
     };
@@ -104,8 +110,12 @@
   };
 
   $.fn[pluginName].options = {
-    defaultValue: "",
+    defaultValue: "now-0d",
     unitOptions: [
+      {
+        value: "h",
+        label: "hour(s) ago"
+      },
       {
         value: "d",
         label: "day(s) ago"
