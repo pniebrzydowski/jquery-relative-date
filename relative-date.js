@@ -50,7 +50,8 @@
     this.create = function() {
       var value = self.$element.val();
       if (!value) {
-        self.$element.val(self.options.defaultValue);
+        value = self.options.defaultValue;
+        self.$element.val(value);
       }
 
       var parsedValue = parseValue(value);
